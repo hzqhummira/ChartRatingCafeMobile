@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartRatingCafe.Pages.CommentsPage"
+             BackgroundColor="#F0F0F0">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Comments"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+            <ListView x:Name="CommentsListView" RowHeight="60">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Spacing="5">
+                                <!-- Comment Binding -->
+                                <Label Text="{Binding Comment}"
+                           FontSize="18"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+
+                                <!-- CafeName Binding -->
+                                <Label Text="{Binding CafeName}"
+                           FontSize="11"
+                           TextColor="#000"
+                           HorizontalOptions="Start"
+                           LineBreakMode="WordWrap"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Close"
+                    Clicked="OnCloseButtonClicked"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

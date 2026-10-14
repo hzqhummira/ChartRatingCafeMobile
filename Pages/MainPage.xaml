@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartRatingCafe.Pages.MainPage"
+             BackgroundColor="#E0E0E0">
+
+    <Grid>
+        <!-- Background Image -->
+        <Image Source="wallpaper.jpg"
+               Aspect="AspectFill"
+               IsVisible="True"
+               Opacity="0.3" />
+
+        <!-- Center Frame -->
+        <Frame BackgroundColor="#BDBDBD"
+               BorderColor="#9E9E9E"
+               Opacity="0.8"
+               CornerRadius="15"
+               HasShadow="True"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Padding="30"
+               Margin="20">
+
+            <!-- StackLayout for Centered Content -->
+            <StackLayout VerticalOptions="Center">
+                <!-- Title Label -->
+                <Label Text="AdminNilaiKafeteria"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="Black"
+                       Margin="0,0,0,20" />
+
+                <!-- Logo Image -->
+                <Image Source="logoutem.png"
+                       HeightRequest="120"
+                       WidthRequest="120"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,15" />
+
+                <!-- View Bar Chart Button -->
+                <Button Text="Carta Individu Kafeteria"
+                        BackgroundColor="#0D47A1"
+                        TextColor="White"
+                        CornerRadius="15"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        WidthRequest="200"
+                        Clicked="OnViewBarChartClicked"
+                        Margin="0,0,0,10" />
+
+                <!-- Navigate to Page Two Button -->
+                <Button Text="Carta Keseluruhan Kaferia"
+                        BackgroundColor="#0D47A1"
+                        TextColor="White"
+                        CornerRadius="15"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        WidthRequest="200"
+                        Clicked="OnNavigateToPageTwoClicked" />
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>

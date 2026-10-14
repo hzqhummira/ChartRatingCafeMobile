@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="ChartRatingCafe.Pages.ChartRatingPageTwo"
+             BackgroundColor="#E0E0E0">
+
+    <!-- Define page-level resources, such as styles -->
+    <ContentPage.Resources>
+        <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="{OnIdiom Phone=18, Tablet=24, Desktop=30}" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="Margin" Value="0,0,0,10" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <!-- Background image with transparency -->
+        <Image Source="wallpaper.jpg"
+               Aspect="AspectFill"
+               IsVisible="True"
+               Opacity="0.3" />
+
+        <!-- Content grid for positioning elements -->
+        <Grid RowDefinitions="Auto, Auto, Auto, Auto"
+              ColumnDefinitions="Auto"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              Padding="25"
+              Margin="20">
+
+            <!-- Title label -->
+            <Label Text="Penilaian Kafeteria Keseluruhan"
+                   Style="{StaticResource TitleLabelStyle}"
+                   Grid.Row="0"/>
+
+            <!-- ChartView for displaying the line chart -->
+            <microcharts:ChartView x:Name="CafeBarChartView"
+                                   HeightRequest="{OnIdiom Phone=350, Tablet=450, Desktop=550}"
+                                   WidthRequest="{OnIdiom Phone=350, Tablet=450, Desktop=550}"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"
+                                   Margin="0,20,0,0"
+                                   Grid.Row="1"/>
+
+            <!-- Button to show comments -->
+            <Button Text="View Comments"
+                    Clicked="OnViewCommentsButtonClicked"
+                    Grid.Row="2"
+                    Margin="0,20,0,0"/>
+        </Grid>
+    </Grid>
+</ContentPage>
